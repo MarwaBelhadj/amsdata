@@ -77,8 +77,6 @@ result, Model model) {
          Provider provider = providerRepository.findById(id)
              .orElseThrow(()-> new IllegalArgumentException("Invalid provider Id:" + id));
 
-         System.out.println("suite du programme...");
-
          providerRepository.delete(provider);
 
          /*model.addAttribute("providers", providerRepository.findAll());
