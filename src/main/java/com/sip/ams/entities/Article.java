@@ -91,7 +91,7 @@ public class Article {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-
+/*   Many To One Relation many articles may have the same provider */
 	@ManyToOne(fetch=FetchType.LAZY , optional = false)
 	@JoinColumn(name="provider_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
