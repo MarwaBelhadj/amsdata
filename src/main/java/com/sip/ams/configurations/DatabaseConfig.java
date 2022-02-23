@@ -1,4 +1,4 @@
-
+/*
  package com.sip.ams.configurations;
 
 import javax.activation.DataSource;
@@ -23,3 +23,5 @@ public class DatabaseConfig {
 	 return (DataSource) new HikariDataSource(config);
 	}
 }
+
+*/
