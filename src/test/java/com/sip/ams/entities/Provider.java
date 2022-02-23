@@ -13,30 +13,30 @@ import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Provider {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-
-	@NotBlank(message = "Name is mandatory") // c'est une entité généré par validation
-	@Column(name = "name")
+	
+	@NotBlank(message="Name is mandatory")
+	@Column(name="name")
 	private String name;
-
-	@NotBlank(message = "Address is mandatory")
-	@Column(name = "address")
+	
+	@NotBlank(message="Address is mandatory")
+	@Column(name="address")
 	private String address;
-
-	@NotBlank(message = "Email is mandatory")
-
-	@Column(name = "email")
-	private String email;
-
-	// "provider" c'est l'Id dans Thymeleaf
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "provider")
-	List<Article> articles;
-
+	
+	@NotBlank(message="Email is mandatory")
+	@Column(name="email")
+    private String email;
+    
+	//"provider" c'est l'Id dans Thymeleaf
+	@OneToMany(cascade =CascadeType.ALL, mappedBy = "provider")
+    List<Article> articles;
+    
+    
 	public Provider() {
 	}
+
 
 	public Provider(String name, String address, String email) {
 		this.name = name;
@@ -44,7 +44,8 @@ public class Provider {
 		this.email = email;
 	}
 
-	public Provider(String name, String address, String email, List<Article> articles) {
+	
+	public Provider( String name, String address, String email, List<Article> articles) {
 		super();
 		this.name = name;
 		this.address = address;
@@ -52,45 +53,57 @@ public class Provider {
 		this.articles = articles;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public long getId() {
 		return id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+
+	public void setId(long id) {
+		this.id = id;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getEmail() {
-
-		return email;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
 
 	public String getAddress() {
 		return address;
 	}
 
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
 	public List<Article> getArticles() {
 		return articles;
 	}
+
 
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
 	}
 	
+	
+    
+    
 }
