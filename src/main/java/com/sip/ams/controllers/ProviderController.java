@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sip.ams.entities.Article;
 import com.sip.ams.entities.Provider;
-import com.sip.ams.repositories.ProviderRepository;
+import com.sip.ams.repositories.*;
 
 @Controller
 @RequestMapping("/provider")
@@ -23,7 +23,7 @@ public class ProviderController {
 
 	private final ProviderRepository providerRepository;
 
-	@Autowired // Pourquoi on a mis cette annotation
+	@Autowired // C'est une annotation pour faire l'injection de dépendance provider.Repository
 	public ProviderController(ProviderRepository providerRepository) {
 
 		this.providerRepository = providerRepository;

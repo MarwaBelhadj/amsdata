@@ -23,8 +23,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sip.ams.entities.Article;
 import com.sip.ams.entities.Provider;
-import com.sip.ams.repositories.ArticleRepository;
-import com.sip.ams.repositories.ProviderRepository;
+import com.sip.ams.repositories.*;
+
 
 @Controller
 @RequestMapping("/article/")
@@ -33,7 +33,9 @@ public class ArticleController {
 	private final ProviderRepository providerRepository;
 	
 	public static String uploadDirectory = System.getProperty("user.dir")+"/src/main/resources/static/uploads";
-    @Autowired
+    
+	
+	@Autowired //Injection des deux dépendances articleRepository et providerRepositorys
     public ArticleController(ArticleRepository articleRepository, ProviderRepository providerRepository) {
         this.articleRepository = articleRepository;
         this.providerRepository = providerRepository;
